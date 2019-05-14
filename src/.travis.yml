@@ -1,0 +1,9 @@
+sudo: required
+service:
+  - docker
+
+before_install:
+  - docker build -t gmktchyan/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run gmkrtchyan/docker-react npm run test -- --coverage
